@@ -80,7 +80,7 @@ namespace Veldrid.ImageSharp
             for (uint level = 0; level < MipLevels; level++)
             {
                 Image<Rgba32> image = Images[level];
-                if (!image.TryGetSinglePixelSpan(out Span<Rgba32> pixelSpan))
+                if (!image.DangerousTryGetSinglePixelSpan(out Span<Rgba32> pixelSpan))
                 {
                     throw new VeldridException("Unable to get image pixelspan.");
                 }
@@ -126,7 +126,7 @@ namespace Veldrid.ImageSharp
             for (int level = 0; level < MipLevels; level++)
             {
                 Image<Rgba32> image = Images[level];
-                if (!image.TryGetSinglePixelSpan(out Span<Rgba32> pixelSpan))
+                if (!image.DangerousTryGetSinglePixelSpan(out Span<Rgba32> pixelSpan))
                 {
                     throw new VeldridException("Unable to get image pixelspan.");
                 }
